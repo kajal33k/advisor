@@ -173,7 +173,7 @@
               <img src="{{ asset('assets/image/img3.png') }}" alt="Slider Image" class="w-full h-[180px] sm:h-[260px] md:h-[360px] lg:h-[460px] object-cover rounded-[32px] transition duration-[1200ms] group-hover:scale-105">
 
           <div
-        class="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-[#071a2f]/70 via-[#071a2f]/20 to-transparent"
+        class="absolute inset-x-0 bottom-0 h-32 "
       ></div>
       
             </div>

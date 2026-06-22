@@ -131,6 +131,7 @@
 
     <!-- MAIN CONTENT -->
     <main class="pt-0">
+    
         @yield('content')
     </main>
 
@@ -223,13 +224,10 @@ document.addEventListener("DOMContentLoaded", function () {
   }, 2000);
 
 </script>
-<!-- CONSULTATION POPUP -->
-<!-- FIXED PREMIUM CONSULTATION POPUP -->
+
 <!-- RESPONSIVE CONSULTATION POPUP -->
-<div
-    id="consultationPopup"
-    class="fixed inset-0 z-[9999] hidden items-center justify-center bg-[#071a2f]/80 backdrop-blur-md p-3 sm:p-5"
->
+
+<div id="consultationPopup"class="fixed inset-0 z-[9999] hidden items-center justify-center bg-[#071a2f]/80 backdrop-blur-md p-3 sm:p-5">
 
     <!-- POPUP CARD -->
     <div
@@ -491,48 +489,56 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const closePopup = document.getElementById("closePopup");
 
-    let popupShown = false;
+    // CHECK IF POPUP ALREADY CLOSED
+    const popupAlreadyClosed =
+        localStorage.getItem("consultationPopupClosed");
 
-    // SHOW POPUP AFTER 40% SCROLL
-    window.addEventListener("scroll", () => {
+    // STOP IF ALREADY CLOSED
+    if (!popupAlreadyClosed) {
 
-        if (popupShown) return;
+        let popupShown = false;
 
-        const scrollTop =
-            window.scrollY;
+        // SHOW POPUP AT 50% SCROLL
+        window.addEventListener("scroll", () => {
 
-        const docHeight =
-            document.documentElement.scrollHeight - window.innerHeight;
+            if (popupShown) return;
 
-        const scrollPercent =
-            (scrollTop / docHeight) * 100;
+            const scrollTop = window.scrollY;
 
-        if (scrollPercent >= 40) {
+            const docHeight =
+                document.documentElement.scrollHeight - window.innerHeight;
 
-            popupShown = true;
+            const scrollPercent =
+                (scrollTop / docHeight) * 100;
 
-            popup.classList.remove("hidden");
+            if (scrollPercent >= 50) {
 
-            popup.classList.add("flex");
+                popupShown = true;
 
-            setTimeout(() => {
+                popup.classList.remove("hidden");
 
-                popupCard.classList.remove("scale-95", "opacity-0");
+                popup.classList.add("flex");
 
-                popupCard.classList.add("scale-100", "opacity-100");
+                setTimeout(() => {
 
-            }, 50);
+                    popupCard.classList.remove("scale-95", "opacity-0");
 
-            document.body.style.overflow = "hidden";
+                    popupCard.classList.add("scale-100", "opacity-100");
 
-        }
+                }, 50);
 
-    });
+                document.body.style.overflow = "hidden";
 
-    // CLOSE POPUP
+            }
+
+        });
+
+    }
+
+    // CLOSE BUTTON
     closePopup.addEventListener("click", closeModal);
 
-    // CLICK OUTSIDE TO CLOSE
+    // CLICK OUTSIDE
     popup.addEventListener("click", (e) => {
 
         if (e.target === popup) {
@@ -558,6 +564,12 @@ document.addEventListener("DOMContentLoaded", function () {
             document.body.style.overflow = "auto";
 
         }, 300);
+
+        // SAVE CLOSE STATE
+        localStorage.setItem(
+            "consultationPopupClosed",
+            "true"
+        );
 
     }
 

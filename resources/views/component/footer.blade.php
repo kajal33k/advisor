@@ -96,7 +96,7 @@
                         <a href="/"
                            class="group inline-flex items-center gap-3 text-gray-100 hover:text-[#ffdf82] transition duration-300">
 
-                            <span class="w-2 h-2 rounded-full bg-[#166534] group-hover:bg-[#ffdf82] transition"></span>
+                              <span class="text-[#ffdf82]">✔</span>
 
                             Home
 
@@ -107,7 +107,7 @@
                         <a href="/about"
                            class="group inline-flex items-center gap-3 text-gray-100 hover:text-[#ffdf82] transition duration-300">
 
-                            <span class="w-2 h-2 rounded-full bg-[#166534] group-hover:bg-[#ffdf82] transition"></span>
+                             <span class="text-[#ffdf82]">✔</span>
 
                             About Us
 
@@ -118,7 +118,7 @@
                         <a href="/services"
                            class="group inline-flex items-center gap-3 text-gray-100 hover:text-[#ffdf82] transition duration-300">
 
-                            <span class="w-2 h-2 rounded-full bg-[#166534] group-hover:bg-[#ffdf82] transition"></span>
+                            <span class="text-[#ffdf82]">✔</span>
 
                             Services
 
@@ -129,7 +129,7 @@
                         <a href="/products"
                            class="group inline-flex items-center gap-3 text-gray-100 hover:text-[#ffdf82] transition duration-300">
 
-                            <span class="w-2 h-2 rounded-full bg-[#166534] group-hover:bg-[#ffdf82] transition"></span>
+                              <span class="text-[#ffdf82]">✔</span>
 
                             Investment Plans
 
@@ -140,7 +140,7 @@
                         <a href="/contact"
                            class="group inline-flex items-center gap-3 text-gray-100 hover:text-[#ffdf82] transition duration-300">
 
-                            <span class="w-2 h-2 rounded-full bg-[#166534] group-hover:bg-[#ffdf82] transition"></span>
+                             <span class="text-[#ffdf82]">✔</span>
 
                             Contact
 
